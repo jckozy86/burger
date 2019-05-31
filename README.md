@@ -10,73 +10,72 @@ Application can be accessed at: [https://node-burgers-with-sql.herokuapp.com/](h
 
 ## Using The Application
 
-In order to use the app, you need to download all the files from github, and then run `yarn install`
+Burgers is an application where you can see a list of Burgers that have been created, a list of burgers that have been devoured, and a section to create a new burger.
 
-Once complete you can do any of the following:
+### Add a burger
 
-### Check for Movies
+In the section of "Add a Burger" the user can add any special burger order and then hit the button called: "Add a Burger". This will then add the burger in the list of "Burgers that have not been devoured"
 
-You can search for a movie with any title by running
-`node liri.js movie-this <*Name of movie*>`
-or if you forget to add a movie name, you will get by default the movie: "Mr Nobody."
+### Devouring a burger
 
-The response includes:
-* Title
-* Release Year
-* IMDB Rating
-* Rotten Tomatoes Rating
-* Country Produced
-* Language of Movie
-* Plot
-* Actors
-
-### Check for Songs at Spotify by Song Title
-
-You can search for a song at spotify with any title by running
-`node liri.js spotify-this-song <*Name of song*>`
-or if you forget to add a song title, you will get by default the song: "The Sign." by "Ace of Base"
-
-The response includes:
-* Track Name
-* Artist(s)
-* Album Name
-* Link to song preview
-
-
-### Concerts using BandsInTown by Artist Name
-
-You can search for band venues for specific artists by running
-`node liri.js concert-this <*Artist Name*>`
-or if you forget to add a song title, you will get by default the song: "The Sign." by "Ace of Base"
-
-The response includes:
-* Venue Name
-* Location (city and country)
-* Event Date (MM/DD/YYYY)
-
-### Concerts/Movies/Spotify songs in bulk
-
-You can also add all the above commands in a file called *random.txt* that will all run by running `node liri.js do-what-it-says`
-
-## Results
-
-The results will show up on the console view of the terminal, but will also be added on the *log.txt* file on the project root directory
-
-## Instructional Video
-
-An instructional video can be found at: [demo video](https://drive.google.com/open?id=1SFuaVYGJLrpn2YztXAp54WYCWqRTOzMa)
+Next to each created burger, there is a devour button which allows the user to "virtually devour" the burger. When the burger is "devoured", it will move to the list labeled as: "Burgers that have been devoured"
 
 ## Folder and file Structure
 
+Application code can be downloaded and checked at: [Github Link](https://github.com/jckozy86/burger)
+
 ```
-liri.js -> main file to run
+server.js -> main file to run
+package.json -> file containing all dependencies
+yarn.lock -> file containing exact module version dependencies
+/config 
+  |
+  | connection.js -> file containing db connection details, for both local dev and production (heroku) deployment
+  | orm.js -> file containing the create and update operations, converting objects and strings to SQL queries
+  |
+/controllers
+  |
+  | burgerController.js
+  |
+/db
+  |
+  | schema.sql
+  | seeds.sql
+  |
+/models
+  |
+  | burger.js
+  |
+/public
+  |
+  | /assets
+  |   |
+  |   | /css
+  |        |
+  |        | style.css
+  |     /js
+  |        |
+  |        | burgers.js
+  |  
+/views
+  |
+  | /layouts
+  |    |
+  |    | main.handlebars
+  |
+  | /partials 
+  |    |
+  |    | /burgers
+  |        |
+  |        | burger-block.handlebars
+  |
+  | index.handlebars
+
+
 keys.js -> contains the format of spotify keys
 random.txt -> file containing all the commands you wish to run on each line, delimited by a ','
 log.txt -> file created (if not already existing) with the output of each command run
 .env -> contains the actual keys for the app
-package.json -> file containing all dependencies
-yarn.lock -> file containing exact module version dependencies
 ```
-For purposes of this project working, please do not change file names or folder locations.
 
-### Thanks for checking this out :D
+### Thanks for checking my application out :D
