@@ -70,12 +70,6 @@ yarn.lock -> file containing exact module version dependencies
   |        | burger-block.handlebars
   |
   | index.handlebars
-
-
-keys.js -> contains the format of spotify keys
-random.txt -> file containing all the commands you wish to run on each line, delimited by a ','
-log.txt -> file created (if not already existing) with the output of each command run
-.env -> contains the actual keys for the app
 ```
 
 ### Thanks for checking my application out :D
